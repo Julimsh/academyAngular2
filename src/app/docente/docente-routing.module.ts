@@ -1,3 +1,4 @@
+import { NuovoDocenteComponent } from './nuovo-docente/nuovo-docente.component';
 import { DocenteComponent } from './docente.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,15 @@ const routes: Routes = [
           title: '',
         }
       },
+
+      {
+        path:'nuovoDocente',
+        component: NuovoDocenteComponent,
+        data: {
+          title: 'nuovoDocente',
+        }
+      },
+
     ]
 
   }

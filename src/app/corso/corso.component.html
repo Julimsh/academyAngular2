@@ -1,1 +1,25 @@
-<p>corso works!</p>
+<a class="nav-link btn btn-success mt-5 ms-5 mb-4 text-white" [routerLink]="['/corso/nuovoCorso']" style="width: 15%;">Nuovo Corso</a>
+
+<p-table [value]="corsi" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>Nome Corso</th>
+            <th>Durata</th>
+            <th>Data di Inizio</th>
+            <th>Data di Fine</th>
+            <th>Docente (di riferimento)</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-corso>
+        <tr>
+            <td>{{corso.id}}</td>
+            <td>{{corso.nomeCorso}}</td>
+            <td>{{corso.durata}}</td>
+            <td>{{corso.dataInizio}}</td>
+            <td>{{corso.dataFine}}</td>
+            <td>{{corso.idDocente}}</td>
+            <td><button pButton pRipple type="button" icon="pi pi-times" class="btn btn-danger mt-2" (click)="deleteCorso(corso.id)">X</button></td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -24,11 +24,12 @@ export class DocenteComponent implements OnInit {
       this.docenteService.getAllDocenti().subscribe(docente => {
         // console.log(docente)
       this.isLoadingData = false;
-      this.docenti =docente; // Serve per caricare la tabella
+      this.docenti = docente; // Serve per caricare la tabella
       this.ref.detectChanges();
     });
   }
 
+  // Spostata (e rifatta) in nuovoDocente
 // createDocente(){
 //   this.docenteService.createDocente(this.docenti).subscribe( docente => {
 // this.isLoadingData = false;
@@ -48,9 +49,9 @@ export class DocenteComponent implements OnInit {
 deleteDocente(id: number){
   console.log(id)
   this.docenteService.deleteDocente(id).subscribe( docente => {
-    console.log(docente)
+    // console.log(docente)
     this.isLoadingData = false;
-    this.docenti = docente; // Serve epr caricare la tabella
+    this.docenti = docente; // Serve per caricare la tabella
     this.ref.detectChanges;
   });
 }

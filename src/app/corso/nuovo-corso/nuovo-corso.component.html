@@ -1,0 +1,86 @@
+<div class="container">
+
+    <div class="row mt-2">
+
+        <div div class="col-12 text mt-5 card shadow">
+            <h4 class="my-4 ml-2 fw-bold">Aggiungi un nuovo Corso</h4>
+            <p class="text-secondary ml-2">Compila il form per inserire il nuovo Corso</p>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <div class="row ml-1 mr-1 mb-1">
+
+                    <div class="col-12 md:col-4">
+                        <div class="p-fluid">
+                            <h6>Nome del Corso</h6>
+                            <input type="text" pInputText formControlName="nomeCorso" class="form-control" class="p-inputtext-sm">
+                            <p class="text-secondary ml-1 small">Inserire il nome del Corso</p>
+                            <span class="ml-2"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 md:col-4">
+                        <div class="p-fluid">
+                            <h6>Durata</h6>
+                            <input type="text" pInputText formControlName="durata" class="form-control" class="p-inputtext-sm">
+                            <p class="text-secondary ml-1 small">Inserire la durata del Corso</p>
+                            <span class="ml-2"></span>
+                        </div>
+                    </div>
+
+                    <div class="field col-12 md:col-4">
+                        <div class="p-fluid ">
+                            <h6 for="dateformat">Data di Inizio</h6>
+                            <input type="date" formControlName="dataInizio" class="form-control altezza" dateFormat="dd-mm-yy" inputId="data">
+                            <p class="text-secondary ml-1 small">Inserire la Data di Inizio del Corso</p>
+                            <span class="ml-2"></span>
+                        </div>
+                    </div>
+
+                    <div class="field col-12 md:col-4">
+                        <div class="p-fluid ">
+                            <h6 for="dateformat">Data di Fine</h6>
+                            <input type="date" formControlName="dataFine" class="form-control altezza" dateFormat="dd-mm-yy" inputId="data">
+                            <p class="text-secondary ml-1 small">Inserire la Data di Conclusione del Corso</p>
+                            <span class="ml-2"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-1 ml-1 mr-1">
+
+
+                    <div class="col-12 md:col-4 ">
+                        <div class="p-fluid">
+                            <h6>Docente di Riferimento </h6>
+                            <p-dropdown [autoDisplayFirst]="false" formControlName="idDocente" [options]="docenti" optionLabel="nome" class="p-inputtext-sm"></p-dropdown>
+                            <p class="text-secondary ml-1 small">Inserire il Docente di riferimento del Corso</p>
+                            <span class="ml-2"></span>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+
+                        <div class="col-lg-2 mt-5">
+                            <div class="d-grid">
+                                <div class="btn btn-primary mb-3" (click)="goBack()">Annulla</div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 mt-5" style="float:right;">
+                            <div class="d-grid">
+                                <button class="btn btn-success mb-3">Inserisci il Corso</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
