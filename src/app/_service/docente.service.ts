@@ -18,7 +18,7 @@ export class DocenteService {
   }
 
   createDocente(docente: Docente){
-    return this.http.post(`${environment.apiUrl}/docente/nuovoDocente`, docente);
+    return this.http.post(`${environment.apiUrl}/docente/addDocente`, docente);
   }
 
   deleteDocente(id:any){

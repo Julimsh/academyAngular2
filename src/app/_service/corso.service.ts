@@ -14,11 +14,11 @@ export class CorsoService {
   constructor(private router: Router, private http: HttpClient) { }
 
   getAllCorsi(){
-return this.http.get<any>(`${environment.apiUrl}/corso`);
+return this.http.get<any>(`${environment.apiUrl}/corso/getCorsi`);
   }
 
   createCorso(corso: Corso){
-    return this.http.post(`${environment.apiUrl}/corso/nuovoCorso`, corso);
+    return this.http.post(`${environment.apiUrl}/corso/addCorso`, corso);
   }
 
   deleteCorso(id:any){
