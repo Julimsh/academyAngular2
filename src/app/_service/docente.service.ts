@@ -21,12 +21,28 @@ export class DocenteService {
     return this.http.post(`${environment.apiUrl}/docente/addDocente`, docente);
   }
 
-  deleteDocente(id:any){
-    return this.http.delete<any>(`${environment.apiUrl}/docente/${id}`);
-  }
+//   deleteDocente(id:any){
+//     return this.http.delete<any>(`${environment.apiUrl}/docente/${id}`);
+//   }
 
-  updateDocente(docente:Docente){
-return this.http.put(`${environment.apiUrl}/docente/modificaDocente`, docente);
-  }
+//   updateDocente(docente:Docente){
+// return this.http.put(`${environment.apiUrl}/docente/updateDocente`, docente);
+//   }
+
+//   getDocenteById(id:any){
+//     return this.http.get<any>(`${environment.apiUrl}/docente/${id}`)
+//   }
+
+deleteDocente(id:any) {
+  return this.http.delete<any>(`${environment.apiUrl}/docente/deleteDocente/${id}`)
+}
+
+updateDocente(docente:Docente) {
+return this.http.put(`${environment.apiUrl}/docente/updateDocente`, docente)
+}
+
+ getDocenteById(id:any){
+  return this.http.get<any>(`${environment.apiUrl}/docente/findDocente/${id}`)
+}
 
 }

@@ -1,3 +1,4 @@
+import { UpdateDocenteComponent } from './update-docente/update-docente.component';
 import { NuovoDocenteComponent } from './nuovo-docente/nuovo-docente.component';
 import { DocenteComponent } from './docente.component';
 import { NgModule } from '@angular/core';
@@ -25,6 +26,14 @@ const routes: Routes = [
         component: NuovoDocenteComponent,
         data: {
           title: 'nuovoDocente',
+        }
+      },
+
+      {
+        path:'updateDocente/:id',
+        component: UpdateDocenteComponent,
+        data: {
+          title: 'updateDocente',
         }
       },
 

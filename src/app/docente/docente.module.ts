@@ -6,9 +6,10 @@ import { DocenteComponent } from './docente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { NuovoDocenteComponent } from './nuovo-docente/nuovo-docente.component';
+import { UpdateDocenteComponent } from './update-docente/update-docente.component';
 
 @NgModule({
-  declarations: [DocenteComponent, NuovoDocenteComponent],
+  declarations: [DocenteComponent, NuovoDocenteComponent, UpdateDocenteComponent],
   imports: [
     CommonModule,
     DocenteRoutingModule,

@@ -14,19 +14,19 @@ export class CorsoService {
   constructor(private router: Router, private http: HttpClient) { }
 
   getAllCorsi(){
-return this.http.get<any>(`${environment.apiUrl}/corso/getCorsi`);
+return this.http.get<any>(`${environment.apiUrl2}/corso/getCorsi`);
   }
 
   createCorso(corso: Corso){
-    return this.http.post(`${environment.apiUrl}/corso/addCorso`, corso);
+    return this.http.post(`${environment.apiUrl2}/corso/addCorso`, corso);
   }
 
   deleteCorso(id:any){
-    return this.http.delete<any>(`${environment.apiUrl}/corso/${id}`);
+    return this.http.delete<any>(`${environment.apiUrl2}/corso/${id}`);
   }
 
   updateDocente(corso: Corso){
-  return this.http.put(`${environment.apiUrl}/corso/modificaCorso`, corso);
+  return this.http.put(`${environment.apiUrl2}/corso/modificaCorso`, corso);
   }
 
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DocenteService } from './../_service/docente.service';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Docente } from '../_model/docente';
@@ -13,7 +14,8 @@ export class DocenteComponent implements OnInit {
 
   constructor(
     private docenteService: DocenteService,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,22 +40,16 @@ export class DocenteComponent implements OnInit {
 //   });
 // }
 
-// uploadDocente(){
-//   this.docenteService.updateDocente(this.docenti).subscribe( docente => {
-// this.isLoadingData = false;
-//       // this.docenti =docente; // Serve epr caricare la tabella
-// this.ref.detectChanges;
-//   });
-// }
+deleteDocente(id:any) {
+  this.docenteService.deleteDocente(id)
+  .subscribe(data => {
+    this.getAllDocenti()
+    this.ref.detectChanges();
+  })
+}
 
-deleteDocente(id: number){
-  console.log(id)
-  this.docenteService.deleteDocente(id).subscribe( docente => {
-    // console.log(docente)
-    this.isLoadingData = false;
-    this.docenti = docente; // Serve per caricare la tabella
-    this.ref.detectChanges;
-  });
+updateDocente(id:any) {
+  this.router.navigate(['/docente/updateDocente/'+id]);
 }
 
 

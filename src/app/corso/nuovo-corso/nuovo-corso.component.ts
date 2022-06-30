@@ -67,15 +67,10 @@ export class NuovoCorsoComponent implements OnInit {
 
     this.loading = true;
 
-    this.corsoService.createCorso(this.form.value).subscribe(
-        (data) => {
+    this.corsoService.createCorso(this.form.value).subscribe()
           alert("Corso correttamente inserito!")
           this.router.navigate(['/corso'], { relativeTo: this.route });
-        },
-        (error) => {
-          this.loading = false;
-          alert("Si è verificato un errore. Corso non inserito.")
-        });
+
   }
 
   goBack(){

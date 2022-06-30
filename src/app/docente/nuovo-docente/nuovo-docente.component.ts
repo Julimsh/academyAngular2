@@ -17,13 +17,8 @@ export class NuovoDocenteComponent implements OnInit {
   submitted = false;
   isLoadingData = true;
 
-  // consulenti: any = [];
-  // idConsulenteRiferimento: any;
-
-  // cols: any[];
-
   constructor(
-    // private location: Location,
+
     private docenteService: DocenteService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -42,13 +37,6 @@ export class NuovoDocenteComponent implements OnInit {
 
   }
 
-  // getAllDocenti() {
-  //   this.docenteService.getAllDocenti()
-  //     .subscribe(data => {
-  //         this.docenti = data
-  //       })
-  // }
-
   onSubmit() {
 
     this.submitted = true;
@@ -59,19 +47,14 @@ export class NuovoDocenteComponent implements OnInit {
 
     this.loading = true;
 
-    this.docenteService.createDocente(this.form.value).subscribe(
-        (data) => {
+    this.docenteService.createDocente(this.form.value).subscribe()
+
           alert("Docente inserito con Successo!")
           this.router.navigate(['/docente'], { relativeTo: this.route });
-        },
-        (error) => {
-          this.loading = false;
-          alert("Si è verificato un errore. Il docente non è stato inserito.")
-        });
   }
 
   goBack(){
-    this.router.navigate(['/docente'])
+    this.router.navigate(['/docente']);
   }
 
 }
